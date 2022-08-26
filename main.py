@@ -36,7 +36,7 @@ def move():
     # jsonState = json.loads(request.json)
     # logger.info(jsonState)
     # myLocation = request.js
-    return moves[0]
+    return moves[2]
     # return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
