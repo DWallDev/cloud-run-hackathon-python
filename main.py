@@ -29,10 +29,17 @@ moves = ['F', 'T', 'L', 'R']
 def index():
     return "Let the battle begin!"
 
+@app.route("/command", methods=['GET'])
+def command():
+    action = request.args
+    return action    
+
 @app.route("/", methods=['POST'])
 def move():
     request.get_data()
     logger.info(request.json)
+    if not os.path.exists("/tmp/command"):
+        return moves[random.randrange(len(moves))]
     # jsonState = json.loads(request.json)
     # logger.info(jsonState)
     # myLocation = request.js
