@@ -29,17 +29,17 @@ moves = ['F', 'T', 'L', 'R']
 def index():
     return "Let the battle begin!"
 
-# @app.route("/command", methods=['GET'])
-# def command():
-#     action = request.args
-#     with open("/tmp/command", "w") as f:
-#         f.write(action)
-#     return action    
+@app.route("/command", methods=['GET'])
+def command():
+    action = request.args
+    with open("/tmp/command", "w") as f:
+        f.write(action)
+        return action    
 
-# @app.route("/current", methods=['GET'])
-# def command():
-#     with open("/tmp/command", "r") as f:
-#       return f.readlines()
+@app.route("/current", methods=['GET'])
+def command():
+    with open("/tmp/command", "r") as f:
+      return f.readlines()
 
 @app.route("/", methods=['POST'])
 def move():
