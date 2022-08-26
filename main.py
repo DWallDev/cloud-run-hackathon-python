@@ -47,10 +47,12 @@ def move():
     logger.info(request.json)
     if not os.path.exists("/tmp/command"):
         return moves[random.randrange(len(moves))]
+    else:
+        return moves[2]
     # jsonState = json.loads(request.json)
     # logger.info(jsonState)
     # myLocation = request.js
-    return moves[2]
+    
     # return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
